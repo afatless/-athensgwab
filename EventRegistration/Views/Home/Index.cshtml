@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Register Form";
+}
+
+<div class='panel panel-primary dialog-panel'>
+	<div class='panel-heading'>
+		<h5>Event - Registrations (Total: @ViewBag.RegistrationCount)</h5>
+	</div>
+	<div class='panel-body'>
+		<form class='form-horizontal' role='form' action="@Url.Action("Index", "Home")" method="POST">
+			<div class='form-group'>
+				<label class='control-label col-md-2 col-md-offset-2' for='id_accomodation'>Ticket Type</label>
+				<div class='col-md-3'>
+					<select class='form-control' id='id_accomodation' name="TicketType">
+						<option>Early Bird - 100€</option>
+						<option>Student - 100€</option>
+						<option>Normal - 150€</option>
+					</select>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='control-label col-md-2 col-md-offset-2' for='id_title'>Name</label>
+				<div class='col-md-8'>
+					<div class='col-md-3'>
+						<div class='form-group internal'>
+							<input class='form-control' id='id_first_name' name="FirstName" placeholder='First Name' type='text'>
+						</div>
+					</div>
+					<div class='col-md-3 indent-small'>
+						<div class='form-group internal'>
+							<input class='form-control' id='id_last_name' name="LastName" placeholder='Last Name' type='text'>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='control-label col-md-2 col-md-offset-2' for='id_email'>Contact</label>
+				<div class='col-md-6'>
+					<div class='form-group'>
+						<div class='col-md-11'>
+							<input class='form-control' id='id_email' name="Email" placeholder='E-mail' type='text'>
+						</div>
+					</div>
+					<div class='form-group internal'>
+						<div class='col-md-11'>
+							<input class='form-control' id='id_phone' name="PhoneNumber" placeholder='Phone: (xxx) - xxx xxxx' type='text'>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='control-label col-md-2 col-md-offset-2' for='id_tshirt'>T-Shirt Size</label>
+				<div class='col-md-8'>
+					<div class='col-md-3'>
+						<div class='form-group internal'>
+							<select class='form-control' name="ShirtSize" id='id_tshirt'>
+								<option value="0">S - Small</option>
+								<option value="1">M - Medium</option>
+								<option value="2">L - Large</option>
+								<option value="3">XL - Extral Large</option>
+								<option value="4">XXL - XX Large</option>
+							</select>
+						</div>
+					</div>
+					<div class='col-md-9'>
+						<div class='form-group internal'>
+							<label class='control-label col-md-3' for='id_slide'>Allow Communication</label>
+							<div class='make-switch' data-off-label='NO' data-on-label='YES' id='id_slide_switch'>
+								<input id='id_slide' name="AllowCommunication" type='checkbox' value='chk_hydro'>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='form-group'>
+				<label class='control-label col-md-2 col-md-offset-2' for='id_comments'>Comments</label>
+				<div class='col-md-6'>
+					<textarea class='form-control' id='id_comments' name="Comments" placeholder='Additional comments' rows='3'></textarea>
+				</div>
+			</div>
+			<div class='form-group'>
+				<div class='col-md-offset-4 col-md-3'>
+					<button class='btn-lg btn-primary' type='submit'>Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
